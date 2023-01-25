@@ -10,9 +10,11 @@ import java.awt.font.TextAttribute
 import kotlin.random.Random
 
 class MainActivity : AppCompatActivity() {
+    lateinit var diceImageView: ImageView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        diceImageView = findViewById(R.id.imageview)
         val button: Button = findViewById(R.id.roll_button)
         button.text = "Let's roll"
         button.setOnClickListener {
@@ -30,7 +32,6 @@ class MainActivity : AppCompatActivity() {
             5 -> R.drawable.dice_5
             else -> R.drawable.dice_6
         }
-        val imageView: ImageView = findViewById(R.id.imageview)
-        imageView.setImageResource(image)
+        diceImageView.setImageResource(image)
     }
 }
